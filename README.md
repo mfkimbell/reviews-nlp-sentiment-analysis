@@ -105,7 +105,7 @@ last_seen_at | 2021-08-17 14:55:26.348302
 sentiment    | 1.1
 
 ```
-Here is the same post after running the program, this ran for all posts in the postgres database. 
+Here is the same post after running the program, this ran for all posts in the postgres database. The 1.1 has changed to 0.905, very positive!
 ```sql
 -[ RECORD 1 ]+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 id           | 10112943025779381
