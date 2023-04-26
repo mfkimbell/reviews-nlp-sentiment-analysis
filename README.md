@@ -3,6 +3,7 @@ The purpose of this project was to investigate different methods of adding senti
 
 **Tools Used:**
 
+* `tensorflow` and `numpy` for machine learning and scientific computing
 * `spaCY`, `NLTK` and `Transformers` for Natural Language Processing
 * `PostgreSQL` for storing data
 * `asyncpg` for getting data from SQL to Python
