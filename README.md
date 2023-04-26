@@ -4,10 +4,14 @@ The purpose of this project was to investigate different methods of adding senti
 **Tools Used:**
 
 * `spaCY`, `NLTK` and `Transformers` for Natural Language Processing
-* SQL/PostgreSQL for storing data
+* `PostgreSQL` for storing data
 * `asyncpg` for getting data from SQL to Python
 * `asyncio` for sending concurrent requests to an event loop, which delivers them to be processed (not useful here but could be scaled up in the future)
-
+*  `docker` for containerizing the project
+* `.toml` for storing configuration data
+* `.yml` for storing configuration data for docker and postgres
+* `makefile` for creating shortcuts for rerunning and rebuilding the docker container
+* `pdm` for installing and managing dependencies
 
 
 First, I researched different methods of NLP for sentiment analysis on sentences. I choose `spaCY`, `NLTK`, and HuggingFace's `Transformers`. Specifically, the model I used for Transformers was `"finiteautomata/bertweet-base-sentiment-analysis"`.
