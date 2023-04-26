@@ -93,20 +93,25 @@ The way `polarity` is measured in `spaCY`, you are given a ***composite polarity
 * Using the **Type()** function is helpful when using `Asyncpg` because sometimes its not clear what you are fetching
 * In `Asyncpg`, you use `fetchrow()` for one row, and you use `fetch()` for sql queries that get multiple rows
 
-Originally, in testing, I set all the sentiment values to 1.1 by default, since that should be an impossible result for NLTK.
+Originally, I added the sentiment column with the following command.
+```
+ALTER TABLE TESTING.POST
+ADD COLUMN sentiment NUMERIC
+```
+This is what one of the records looked like before the program runs. 
 
-```sql
+```
 -[ RECORD 1 ]+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 id           | 10112943025779381
 type         | 4
 author       | 4
 text         | "Interesting milestone: Workplace, our business communication tool, has hit 7 million paid subscribers -- a 40% increase in the last year." 
 last_seen_at | 2021-08-17 14:55:26.348302
-sentiment    | 1.1
+sentiment    | Null
 
 ```
-Here is the same post after running the program, this ran for all posts in the postgres database. The 1.1 has changed to 0.905, very positive!
-```sql
+Here is the same post after running the program, this ran for all posts in the postgres database. The sentiment for this is 0.905, very positive.
+```
 -[ RECORD 1 ]+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 id           | 10112943025779381
 type         | 4
