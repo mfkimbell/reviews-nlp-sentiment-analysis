@@ -5,7 +5,8 @@ The purpose of this project was to investigate different methods of adding senti
 
 * `spaCY`, `NLTK` and `Transformers` for Natural Language Processing
 * SQL/PostgreSQL for storing data
-* `Asyncpg` for getting data from SQL to Python
+* `asyncpg` for getting data from SQL to Python
+* `asyncio` for sending concurrent requests to an event loop, which delivers them to be processed (not useful here but could be scaled up in the future)
 
 
 
