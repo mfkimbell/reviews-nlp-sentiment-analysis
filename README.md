@@ -6,8 +6,8 @@ First, I researched different methods of NLP for sentiment analysis on sentences
 
 First, I tested the accuracy of the sentiment for some random sentences I constructed. 
 
-| spaCY | NLTK | HuggingFace Transformers                 | Content for Polarity Measurement                                                                                                          |   |
-|----------------|---------------|---------------------------------------|------------------------------------------------------------------------------------------------------------------|---|
+| spaCY | NLTK | HuggingFace Transformers                 | Content for Polarity Measurement                                                                                                          |
+|----------------|---------------|---------------------------------------|------------------------------------------------------------------------------------------------------------------|
 |           0.18 |       -0.4215 | NEG', 'score': 0.50719153881073}      | A very, very, very slow-moving, aimless movie about a distressed, drifting young man.                            |   |
 |  0.01458333333 |       -0.5507 | NEG', 'score': 0.8558710813522339}]   | Not sure who was more lost - the flat characters or the audience, nearly half of whom walked out.                |   |
 |  -0.1229166667 |       -0.7178 | NEG', 'score': 0.9835329055786133}]   | Attempting artiness with black & white and clever camera angles, the movie disappointed.                         |   |
