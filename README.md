@@ -1,10 +1,17 @@
 # NLP-sentiment-for-twitter-SQL-database
-The purpose of this project was to investigate different methods of adding sentiments to Twitter posts and implement the preferrred method.
+The purpose of this project was to investigate different methods of adding sentiments to Twitter posts and implement the preferrred method. Specifically, I wanted to add a sentiment section to an SQL database of Tweets, and populate those with sentiment polaritys based off the content of the tweet. Additionally, I wanted to update them in a batch format to make the program run faster.
+
+**Tools Used:**
+
+* `spaCY`, `NLTK` and `Transformers` for Natural Language Processing
+* SQL/PostgreSQL for storing data
+* `Asyncpg` for getting data from SQL to Python
+
 
 
 First, I researched different methods of NLP for sentiment analysis on sentences. I choose `spaCY`, `NLTK`, and HuggingFace's `Transformers`. Specifically, the model I used for Transformers was `"finiteautomata/bertweet-base-sentiment-analysis"`.
 
-First, I tested the accuracy of the sentiment for some random sentences I constructed. 
+I tested the accuracy of the sentiment for some random sentences I constructed. 
 
 | spaCY | NLTK | HuggingFace Transformers                 | Content for Polarity Measurement                                                                                                          |
 |----------------|---------------|---------------------------------------|------------------------------------------------------------------------------------------------------------------|
