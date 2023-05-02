@@ -135,7 +135,7 @@ sentiment    | 0.905
 ```
 
 
-Here are some of the psql related functions:
+Here are some of the psql and asyncpg related functions:
 ```python
 async def get_post_text(id: int, conn):
     row = await conn.fetchrow("SELECT details FROM testing.post WHERE ID = $1", id)
