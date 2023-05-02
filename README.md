@@ -133,3 +133,43 @@ text         | "Interesting milestone: Workplace, our business communication too
 last_seen_at | 2021-08-17 14:55:26.348302
 sentiment    | 0.905
 ```
+
+
+Here are some of the psql and asyncpg related functions:
+```python
+async def get_post_text(id: int, conn):
+    row = await conn.fetchrow("SELECT details FROM testing.post WHERE ID = $1", id)
+    json_row = json.loads(str(row[0]))
+    text = json_row["text"]
+    return text
+
+async def update_post_sentiment(id: int, text, conn):
+    sentiment = polarity(text)
+    QUERY = f"UPDATE testing.post SET sentiment = {sentiment} WHERE ID = {id};"
+    await conn.execute(QUERY)
+
+async def get_posts(i, window, conn):
+    posts = await conn.fetch(
+        f"SELECT * FROM testing.post WHERE ID BETWEEN {i} AND {i+window}"
+    )
+    posts_list = []
+
+    for post in posts:
+        json_row = json.loads(str(post["details"]))
+        text = json_row["text"]
+
+        id = post["id"]
+        posts_list.append([id, text])
+
+    return posts_list
+
+async def get_max_id(conn):
+    max_query = await conn.fetchrow(f"SELECT MAX(ID) from testing.post;")
+    id = json.loads(str(max_query["max"]))
+    return id
+
+async def get_min_id(conn):
+    min_query = await conn.fetchrow(f"SELECT MIN(ID) from testing.post;")
+    id = json.loads(str(min_query["min"]))
+    return id
+    ```
