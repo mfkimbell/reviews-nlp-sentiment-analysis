@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  facebook_edit:
+    image: INSERT IMAGE
+    container_name: "facebook_edit"
+    healthcheck:
+      test: "${DOCKER_HEALTHCHECK}"
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    build:
+      context: "."
+      dockerfile: "./Dockerfile"
+      args:
+        DOPPLER_TOKEN: ${DOPPLER_TOKEN}
+    environment:
+      - "DOPPLER_TOKEN"
+    networks:
+      - "webapps"
+    labels:
+      INSERT ROUTING HERE
+    deploy:
+      restart_policy:
+        condition: "unless-stopped"
+        delay: 10s
+        window: 30s
+
+networks:
+  webapps:
+    external: true

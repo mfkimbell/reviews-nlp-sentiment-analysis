@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: edit-fb-database
+Version: 0.1.0
+Summary: Facebook worker that adds sentiment values to posts
+Author-email: Mitchell Kimbell <107063397+mfkimbell@users.noreply.github.com>
+License: MIT
+Requires-Python: >=3.9

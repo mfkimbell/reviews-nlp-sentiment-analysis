@@ -1,0 +1,20 @@
+[tool.pdm]
+
+[project]
+name = "edit_fb_database"
+version = "0.1.0"
+description = "Facebook worker that adds sentiment values to posts"
+authors = [
+    {name = "Mitchell Kimbell", email = "107063397+mfkimbell@users.noreply.github.com"},
+]
+dependencies = [
+    #must run doppler run -- pdm install when changing dependencies
+    "toolset>=2.12.3",
+    "emoji==0.6.0",
+    "nltk>=3.8.1",
+]
+requires-python = ">=3.9"
+license = {text = "MIT"}
+
+
+

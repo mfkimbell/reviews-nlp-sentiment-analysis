@@ -1,0 +1,16 @@
+---
+version: "3.8"
+services:
+  facebook_edit:
+    volumes:
+      - "$PWD/build:/project/public"
+    command: --reload --reload-extra-file ./public
+    healthcheck:
+      interval: 1s
+      timeout: 1s
+      retries: 99
+      start_period: 1s
+    deploy:
+      restart_policy:
+        delay: 1s
+        window: 1s

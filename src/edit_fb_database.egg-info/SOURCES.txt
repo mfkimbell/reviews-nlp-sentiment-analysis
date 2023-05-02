@@ -1,0 +1,7 @@
+pyproject.toml
+src/edit_fb_database/__main__.py
+src/edit_fb_database.egg-info/PKG-INFO
+src/edit_fb_database.egg-info/SOURCES.txt
+src/edit_fb_database.egg-info/dependency_links.txt
+src/edit_fb_database.egg-info/requires.txt
+src/edit_fb_database.egg-info/top_level.txt
