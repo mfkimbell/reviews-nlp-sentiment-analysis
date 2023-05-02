@@ -3,6 +3,23 @@ import json
 import asyncpg
 import asyncio
 import nltk
+from nltk.sentiment import SentimentIntensityAnalyzer
+from toolset.FileIO import load_yml_file
+from toolset.PSQL.AsyncPSQLConnect import connect
+
+
+user_username = INSERT USER NAME
+user_password = INSERT PASSWORD
+
+database_url = (
+    INSERT DATABASE
+)
+
+config = load_yml_file("./local_config.yml")
+
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+
+sia = SentimentIntensityAnalyzer()
 
 nltk.download(
     [
@@ -16,31 +33,6 @@ nltk.download(
         "punkt",
     ]
 )
-
-# doppler run -- pdm add nltk
-
-from nltk.sentiment import SentimentIntensityAnalyzer
-
-sia = SentimentIntensityAnalyzer()
-
-from toolset.FileIO import load_yml_file
-
-from toolset.PSQL.AsyncPSQLConnect import connect
-
-# from transformers import pipeline
-
-user_username = INSERT USER NAME
-user_password = INSERT PASSWORD
-
-database_url = (
-    INSERT DATABASE
-)
-
-config = load_yml_file("./local_config.yml")
-
-os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
-# supposedly this should limit some of the warnings caused by tensor
-
 
 async def get_post_text(id: int, conn):
     row = await conn.fetchrow("SELECT details FROM testing.post WHERE ID = $1", id)
