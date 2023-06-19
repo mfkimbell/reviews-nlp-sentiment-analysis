@@ -35,5 +35,5 @@ ADD local_config.yml /project/local_config.yml
 
 EXPOSE 5000
 
-ENTRYPOINT ["doppler", "run", "--", "python", "pkgs/edit_fb_database/__main__.py"]
+ENTRYPOINT ["doppler", "run", "--", "python", "pkgs/edit_twitter_database/__main__.py"]
 CMD []
