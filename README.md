@@ -1,5 +1,5 @@
-# natural-language-processing-sentiment-analysis-for-twitter-sql-database
-The purpose of this project was to investigate different methods of adding sentiments to Twitter posts and implement the preferrred method. Specifically, I wanted to add a sentiment section to an SQL database of Tweets, and populate those with sentiment polaritys based off the content of the tweet. Additionally, I wanted to update them in a batch format to make the program run faster.
+# natural-language-processing-sentiment-analysis-for-sql-database
+The purpose of this project was to investigate different methods of adding sentiments to social media posts and implement the preferrred method. Specifically, I wanted to add a sentiment section to an SQL database of posts, and populate those with sentiment polaritys based off the content of the tweet. Additionally, I wanted to update them in a batch format to make the program run faster.
 
 **Tools Used:**
 
